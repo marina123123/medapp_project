@@ -1,0 +1,164 @@
+{
+  "en": {
+    "Radiology": {
+      "MRI_hernias_detection": {
+        "survey_type": "MRI hernias detection",
+        "id": "MRI_hernias_detection",
+        "locs": [
+          "unknown",
+          "Heart",
+          "Spine",
+          "Lump",
+          "Hip"
+        ],
+        "flag_loc": "True",
+        "flag_image_analysis": "True",
+        "flag_text_analysis": "False"
+      },
+      "MRI_hemangiomas_detection": {
+        "survey_type": "MRI hemangiomas detection",
+        "id": "MRI_hemangiomas_detection",
+        "locs": [
+          "unknown",
+          "Heart",
+          "Spine",
+          "Lump",
+          "Hip"
+        ],
+        "flag_loc": "True",
+        "flag_image_analysis": "True",
+        "flag_text_analysis": "False"
+      },
+      "MRI_metastases_detection": {
+        "survey_type": "MRI metastases detection",
+        "id": "MRI_metastases_detection",
+        "locs": [
+          "unknown",
+          "Heart",
+          "Spine",
+          "Lump",
+          "Hip"
+        ],
+        "flag_loc": "True",
+        "flag_image_analysis": "True",
+        "flag_text_analysis": "False"
+      }
+    },
+
+    "Dermatology": {
+      "Skin_disease_classificaton": {
+        "survey_type": "Skin disease classificaton",
+        "id": "Skin_disease_classificaton",
+        "locs": [
+          "unknown",
+          "hand or foot",
+          "body",
+          "head"
+        ],
+        "flag_loc": "True",
+        "flag_image_analysis": "True",
+        "flag_text_analysis": "True",
+        "text_fields": [
+          {
+            "sex": [
+              "unknown",
+              "male",
+              "female"
+            ],
+            "age": [
+              "unknown",
+              "<20",
+              "20-29",
+              "30-39",
+              ">=40"
+            ],
+            "skin phototype": [
+              "unknown",
+              "Type I-Ivory",
+              "Type II-White",
+              "Type III-White",
+              "Type IV-Beige or olive",
+              "Type V-Moderately brown",
+              "Type VI-Dark brown or black"
+            ],
+            "family history": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "prolonged sun exposure": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "injury": [
+              "unknown",
+              "yes",
+              "no"
+            ]
+          },
+          {
+            "id": "Clinical data",
+            "lesions": [
+              "unknown",
+              "spot",
+              "plaque",
+              "papule",
+              "knot",
+              "sore"
+            ],
+            "color": [
+              "unknown",
+              "healthy skin",
+              "yellow",
+              "rose",
+              "red",
+              "light-brown",
+              "brown",
+              "black"
+            ],
+            "desquamation": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "number": [
+              "unknown",
+              "one lesion",
+              "several lesions"
+            ]
+          }
+        ]
+      }
+    },
+
+    "Histology": {
+      "Mitosis_detection": {
+        "survey_type": "Mitosis detection",
+        "id": "Mitosis_detection",
+        "locs": [
+          "spine"
+        ],
+        "flag_loc": "False",
+        "flag_image_analysis": "True",
+        "flag_text_analysis": "False"
+      }
+    },
+
+    "Protocols": {
+      "Kidney_protocols_analysis": {
+        "survey_type": "Kidney protocols analysis",
+        "id": "Kidney_protocols_analysis",
+        "locs": [
+          "kidney"
+        ],
+        "flag_loc": "False",
+        "flag_image_analysis": "False",
+        "flag_text_analysis": "False"
+      }
+    }
+  },
+
+  "ru": {
+  }
+}

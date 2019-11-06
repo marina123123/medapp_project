@@ -1,0 +1,57 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <h4 class="my-3"> {{langfields.SURVEYS}} </h4>
+
+    <form action="{{ url_for( 'module_surveys.' + active  ) }}" method="POST">
+        <div class="row">
+            <div class="col-3">
+                <select name="select_researchtype" class="form-control">
+                    {% for key, value in surveys.items() %}
+                        <option>{{ value.survey_type }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-3">
+                <input name="btn_new" type="submit" class="btn btn-primary" value="{{langfields.NEW}}">
+            </div>
+        </div>
+    </form>
+
+    <h4 class="my-3">{{langfields.HISTORY}}</h4>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-condensed">
+                <tr>
+                    {% for f in langfields.HISTORY_FIELDS %}
+                    <th>{{f}}</th>
+                    {% endfor %}
+                    <th>Report</th>
+                    <th>Delete</th>
+                </tr>
+                {% for h in history %}
+                <tr>
+                    <td>{{h.unique_id}}</td>
+                    <td>{{h.date}}</td>
+                    <td>{{h.rid}}</td>
+                    <td>{{h.location}}</td>
+                    <td>{{h.type}}</td>
+                    <td>{{h.survey}}</td>
+                    <td>
+                        <form action="{{ url_for('module_surveys.download_pdf', id=h.unique_id) }}" method="POST">
+                                <input name="btn_download" type="submit" class="btn btn-primary" value="Report"/>
+                        </form>
+                    <td>
+                        <form action="{{ url_for('module_surveys.delete_from_db', active=active, id=h.unique_id) }}" method="POST">
+                                <input name="btn_delete" type="submit" class="btn btn-primary" value="X"/>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

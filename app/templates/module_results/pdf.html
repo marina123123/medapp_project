@@ -1,0 +1,224 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    CC medapp
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    {% if active == 'radiology' %}
+        <h4 class="my-3"> Results: {{survey_type|replace("_", " ")}} </h4>
+
+        <div class="row">
+<!--            <h5 class="col-12"> ID: {{id}} </h5>-->
+<!--            <h5 class="col-12"> Date: {{date}} </h5>-->
+            <h5 class="col-12"> Based on image analysis were found suspicious objects: </h5>
+        </div>
+
+<!--        <div class="row my-3">-->
+<!--            <div class="col-3">-->
+<!--                <table class="table table-condensed">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        {% for c in colnames %}-->
+<!--                            <th>{{ c }}</th>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        {% for row in values %}-->
+<!--                            <tr>-->
+<!--                                {% for v in row %}-->
+<!--                                    <td>{{v}}</td>-->
+<!--                                {% endfor %}-->
+<!--                            </tr>-->
+<!--                        {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        {% for c_p, files in data %}
+            <div class="row my-3">
+                <h5 class="col-3">Contrast: {{c_p[0]}}</h5>
+            </div>
+            <div class="row">
+                <h5 class="col-3">Projection: {{c_p[1]}}</h5>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    {% for fn, fp in files.items() %}
+<!--                        <p>{{fn}}</p>-->
+                        <img class="img-result" src="{{ url_for('static', filename=fp) }}">
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endfor %}
+
+    {% elif active == 'dermatology' %}
+        <div class="row my-3">
+            <h5 class="col-12"> Survey: {{survey_type|replace("_", " ")}} </h5>
+<!--            <h5 class="col-12"> ID: {{id}} </h5>-->
+<!--            <h5 class="col-12"> Date: {{date}} </h5>-->
+        </div>
+
+        <div class="row my-3">
+            <div class="col-12">
+                <img class="img-result" src="{{ url_for('static', filename=path) }}">
+            </div>
+        </div>
+
+        <div class="row">
+            <h5 class="col-12"> Based on image analysis the object was detected as: </h5>
+        </div>
+
+<!--        <div class="row pb-3">-->
+<!--            <div class="col-3">-->
+<!--                <table class="table table-condensed">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        {% for c in colnames %}-->
+<!--                            <th>{{ c }}</th>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        {% for row in values %}-->
+<!--                            <tr>-->
+<!--                                {% for v in row %}-->
+<!--                                    <td>{{v}}</td>-->
+<!--                                {% endfor %}-->
+<!--                            </tr>-->
+<!--                        {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="row">-->
+<!--            <h5 class="col-12"> Based on anamnesis analysis the object was detected as: </h5>-->
+<!--        </div>-->
+
+<!--        <div class="row pb-3">-->
+<!--            <div class="col-3">-->
+<!--                <table class="table table-condensed">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        {% for c in colnames_text %}-->
+<!--                        <th>{{ c }}</th>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    {% for row in values_text %}-->
+<!--                    <tr>-->
+<!--                        {% for v in row %}-->
+<!--                        <td>{{v}}</td>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                    {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+    {% elif active == 'histology' %}
+        <h4 class="my-3"> Results: {{survey_type|replace("_", " ")}} </h4>
+
+        <div class="row">
+<!--            <h5 class="col-12"> ID: {{id}} </h5>-->
+<!--            <h5 class="col-12"> Date: {{date}} </h5>-->
+            <h5 class="col-12"> Based on image analysis were found suspicious objects: </h5>
+        </div>
+
+<!--        <div class="row my-3">-->
+<!--            <div class="col-3">-->
+<!--                <table class="table table-condensed">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        {% for c in colnames %}-->
+<!--                            <th>{{ c }}</th>-->
+<!--                        {% endfor %}-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        {% for row in values %}-->
+<!--                            <tr>-->
+<!--                                {% for v in row %}-->
+<!--                                    <td>{{v}}</td>-->
+<!--                                {% endfor %}-->
+<!--                            </tr>-->
+<!--                        {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        {% for files in data %}
+
+            <div class="row">
+                <div class="col-3">
+                    {% for fn, fp in files.items() %}
+                        <img id={{fn}} class="img-result" src="{{ url_for('static', filename=fp) }}">
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <h4 class="my-3"> Results: {{survey_type|replace("_", " ")}} </h4>
+
+        <div class="row">
+            <h5 class="col-12"> ID: {{id}} </h5>
+            <h5 class="col-12"> Date: {{date}} </h5>
+            <h5 class="col-12">{{langfields.TEXT_HEADTINE}}</h5>
+        </div>
+
+        <div class="jumbotron">
+            <div class="col-12">
+                <div class="well">
+                    <h5>{{langfields.RECOMMENDATIONS}}</h5>
+                    <ul>
+                        {% for c in checks %}
+                        <li> {{c}}</li>
+                        {% endfor %}
+                    </ul>
+                    <h5>{{langfields.DISCRIPANCIES}}</h5>
+                    <ul>
+                        {% for o in outstrings %}
+                        <li> {{o}}</li>
+                        {% endfor %}
+                    </ul>
+                    <h5>{{langfields.PRTOCOL}}</h5>
+                    {% for t in textfromfile%}
+                    <p class="text-justify">{{ t }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    {% endif %}
+
+    <div class="ibm_logo">
+        <img name="img_selected" src="{{ url_for('static', filename='img/ibm_logo.png') }}" height="10px">
+    </div>
+</div>
+{% endblock %}
+

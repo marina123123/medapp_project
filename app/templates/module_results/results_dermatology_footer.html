@@ -1,0 +1,79 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <div class="row my-3">
+        <form action="{{ url_for('module_surveys.download_pdf', id=id) }}" method="POST">
+            <div class="col-3">
+                <input name="btn_new" type="submit" class="btn btn-primary" value="Print"/>
+            </div>
+        </form>
+    </div>
+
+    <div class="row my-3">
+        <h5 class="col-12"> Survey: {{survey_type|replace("_", " ")}} </h5>
+        <h5 class="col-12"> ID: {{id}} </h5>
+        <h5 class="col-12"> Date: {{date}} </h5>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-12">
+            <img class="img-result" src="{{ url_for('static', filename=path) }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <h5 class="col-12"> Based on image analysis the object was detected as: </h5>
+    </div>
+
+    <div class="row pb-3">
+        <div class="col-3">
+            <table class="table table-condensed">
+                <thead class="thead-dark">
+                <tr>
+                    {% for c in colnames %}
+                        <th>{{ c }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for row in values %}
+                        <tr>
+                            {% for v in row %}
+                                <td>{{v}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <h5 class="col-12"> Based on anamnesis analysis the object was detected as: </h5>
+    </div>
+
+    <div class="row pb-3">
+        <div class="col-3">
+            <table class="table table-condensed">
+                <thead class="thead-dark">
+                <tr>
+                    {% for c in colnames_text %}
+                    <th>{{ c }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in values_text %}
+                <tr>
+                    {% for v in row %}
+                    <td>{{v}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

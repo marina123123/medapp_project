@@ -1,0 +1,44 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <div class="row my-3">
+        <form action="{{ url_for('module_surveys.download_pdf', id=id) }}" method="POST">
+            <div class="col-3">
+                <input name="btn_new" type="submit" class="btn btn-primary" value="Print"/>
+            </div>
+        </form>
+    </div>
+
+    <h4 class="my-3"> Results: {{survey_type|replace("_", " ")}} </h4>
+
+    <div class="row">
+        <h5 class="col-12"> ID: {{id}} </h5>
+        <h5 class="col-12"> Date: {{date}} </h5>
+        <h5 class="col-12">{{langfields.TEXT_HEADTINE}}</h5>
+    </div>
+
+    <div class="jumbotron">
+        <div class="col-12">
+            <div class="well">
+                <h5>{{langfields.RECOMMENDATIONS}}</h5>
+                <ul>
+                    {% for c in checks %}
+                    <li> {{c}}</li>
+                    {% endfor %}
+                </ul>
+                <h5>{{langfields.DISCRIPANCIES}}</h5>
+                <ul>
+                    {% for o in outstrings %}
+                    <li> {{o}}</li>
+                    {% endfor %}
+                </ul>
+                <h5>{{langfields.PRTOCOL}}</h5>
+                {% for t in textfromfile%}
+                <p class="text-justify">{{ t }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

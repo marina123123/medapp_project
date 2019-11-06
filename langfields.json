@@ -1,0 +1,96 @@
+{
+  "en": {
+    "SIGN_IN": "Login",
+    "SPECIALISATION": "Specialisation",
+    "SPECIALISATION_TYPE": ["Doctor", "Nurse", "Technical specialist"],
+    "EMAIL": "Email",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "REMEMBER_ME": "Remember me",
+    "ENTER": "Enter",
+    "REGISTRATION": "Registration",
+    "EN": "En",
+    "RU": "Ru",
+    "LOGOUT": "Logout",
+
+    "ARTICLES": "Articles",
+    "ARTICLES_N_PUBLICATIONS": "Articles and publications",
+    "SEARCH_WORD": "Metastasis",
+    "SEARCH": "Search",
+
+    "SURVEYS": "Surveys",
+    "SURVEYS_TYPE": ["MRI", "Dermatoscopy", "Histology", "Protocols"],
+    "NEW": "New survey",
+    "HISTORY": "History",
+    "HISTORY_FIELDS": ["ID", "Date", "Research ID", "Location", "Type", "Survey"],
+
+    "IMAGE_ANALYSIS": "Image Analysis",
+    "ID": "ID",
+    "RESEARCH_ID": "Research ID",
+    "DATE": "Date",
+    "LOCALISATION": "Localisation",
+    "CHOOSE_FILE": "Choose file",
+
+    "TEXT_ANALYSIS": "Text Analysis",
+
+    "TEXT_HEADTINE": "Verification of the correctness of the protocol",
+    "DISCRIPANCIES": "Discrepancies",
+    "RECOMMENDATIONS": "Recommendations",
+    "PRTOCOL": "Protocol",
+
+    "ANALYSE": "Analyse",
+
+    "RESULTS": "Results",
+    "DESCRIPTION": "Description",
+
+    "RADIOLOGY": "Radiology",
+    "DERMATOLOGY": "Dermatology",
+    "HISTOLOGY": "Histology",
+    "PROTOCOLS": "Medical protocols"
+
+  },
+  "ru": {
+    "SIGN_IN": "Авторизация",
+    "SPECIALISATION": "Специализация",
+    "SPECIALISATION_TYPE": ["Врач", "Медицинский работник", "Технический специалист"],
+    "EMAIL": "Почта",
+    "USERNAME": "Имя пользователя",
+    "PASSWORD": "Пароль",
+    "REMEMBER_ME": "Запомнить меня",
+    "ENTER": "Вход",
+    "REGISTRATION": "Регистрация",
+    "EN": "En",
+    "RU": "Ru",
+    "LOGOUT": "Выход",
+
+    "ARTICLES": "Статьи",
+    "ARTICLES_N_PUBLICATIONS": "Статьи и публикации",
+    "SEARCH_WORD": "Метастаз",
+    "SEARCH": "Поиск",
+
+    "SURVEYS": "Исследования",
+    "SURVEYS_TYPE": ["MRI", "Dermatoscopy", "Histology", "Protocols"],
+    "NEW": "Создать",
+    "HISTORY": "История",
+    "HISTORY_FIELDS": ["Иднтификатор", "Дата", "Номер исследования", "Локализация", "Тип"],
+
+    "IMAGE_ANALYSIS": "Анализ изображений",
+    "ID": "Идентификатор",
+    "RESEARCH_ID": "Номер исследования",
+    "DATE": "Дата",
+    "LOCALISATION": "Локализация",
+    "CHOOSE_FILE": "Выбрать файл",
+
+    "TEXT_ANALYSIS": "Анализ текста",
+
+    "TEXT_HEADTINE": "Проверка корректности протокола",
+    "DISCRIPANCIES": "Несоотетствия",
+    "RECOMMENDATIONS": "Рекоммендации",
+    "PRTOCOL": "Протокол",
+
+    "ANALYSE": "Анализировать",
+
+    "RESULTS": "Результаты",
+    "DESCRIPTION": "Описание"
+  }
+}

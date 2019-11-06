@@ -1,0 +1,64 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <form action="{{ url_for( 'module_newsurvey.newsurvey_' + active, survey_type=survey_type, id=id, date=date) }}" enctype="multipart/form-data" method="post">
+
+        <h3 class="my-3"> {{survey_type|replace("_", " ")}} </h3>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="id_box" class="font-weight-bold"> {{langfields.ID}} </label>
+                <input name="input_id" type="input" class="form-control" value="{{id}}" id="id_box" readonly>
+            </div>
+
+            <div class="form-group col-3">
+                <label for="rid_box" class="font-weight-bold"> {{langfields.RESEARCH_ID}} </label>
+                <input name="input_rid" type="input" class="form-control" placeholder={{langfields.RESEARCH_ID}} id="rid_box" required>
+            </div>
+
+            <div class="form-group col-3">
+                <label for="date_box" class="font-weight-bold"> {{langfields.DATE}} </label>
+                <input name="input_date" type="input" class="form-control" value="{{date}}" id="date_box" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label for="loc_box" class="font-weight-bold"> {{langfields.LOCALISATION}} </label>
+                <select name="select_loc" class="form-control" id="loc_box">
+                    {% for l in locs %}
+                    <option>{{l}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-3">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile"> {{langfields.CHOOSE_FILE}} </label>
+                    <input name="file_for_analysis" type="file" class="custom-file-input" id="customFile">
+                </div>
+            </div>
+        </div>
+
+
+        {% block app_content_next_next %}
+        {% endblock %}
+
+
+<!--        <button name="btn_analyse" type="submit" class="btn btn-primary" onclick="$('#loading').attr('area-hidden', 'false');"> {{langfields.ANALYSE}} </button>-->
+
+        <div class="row">
+            <div class="col-sm-3">
+                <input name="btn_analyse" type="submit" class="btn btn-primary" value={{langfields.ANALYSE}}
+                       onclick="load_page()">
+            </div>
+        </div>
+
+    </form>
+
+    <div id="loader"></div>
+
+{% endblock %}

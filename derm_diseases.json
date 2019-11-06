@@ -1,0 +1,333 @@
+{
+  "lentigo": {
+    "locs": [
+      "body",
+      "head"
+    ],
+    "sex": [
+      "male",
+      "female"
+    ],
+    "age": [
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White",
+      "Type IV-Beige or olive",
+      "Type V-Moderately brown",
+      "Type VI-Dark brown or black"
+    ],
+    "family history": [
+      "yes",
+      "no"
+    ],
+    "prolonged sun exposure": [
+      "yes"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot"
+    ],
+    "color": [
+      "brown"
+    ],
+    "desquamation": [
+      "no"
+    ],
+    "number": [
+      "one lesion",
+      "several lesions"
+    ]
+  },
+  "dermatofibroma": {
+    "locs": [
+      "body"
+    ],
+    "sex": [
+      "male",
+      "female"
+    ],
+    "age": [
+      "20-29",
+      "30-39",
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White",
+      "Type IV-Beige or olive",
+      "Type V-Moderately brown",
+      "Type VI-Dark brown or black"
+    ],
+    "family history": [
+      "yes",
+      "no"
+    ],
+    "prolonged sun exposure": [
+      "yes",
+      "no"
+    ],
+    "injury": [
+      "yes"
+    ],
+    "lesions": [
+      "knot"
+    ],
+    "color": [
+      "brown"
+    ],
+    "desquamation": [
+      "yes",
+      "no"
+    ],
+    "number": [
+      "one lesion"
+    ]
+  },
+  "basal_carcioma": {
+    "locs": [
+      "body",
+      "head"
+    ],
+    "sex": [
+      "male",
+      "female"
+    ],
+    "age": [
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White"
+    ],
+    "family history": [
+      "yes",
+      "no"
+    ],
+    "prolonged sun exposure": [
+      "yes"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot",
+      "plaque",
+      "knot",
+      "sore"
+    ],
+    "color": [
+      "rose",
+      "red",
+      "light-brown",
+      "brown",
+      "black"
+    ],
+    "desquamation": [
+      "yes",
+      "no"
+    ],
+    "number": [
+      "one lesion"
+    ]
+  },
+  "actinic_keratosis": {
+    "locs": [
+      "body",
+      "head"
+    ],
+    "sex": [
+      "male",
+      "female"
+    ],
+    "age": [
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White"
+    ],
+    "family history": [
+      "no"
+    ],
+    "prolonged sun exposure": [
+      "yes"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot",
+      "plaque"
+    ],
+    "color": [
+      "healthy skin",
+      "yellow",
+      "rose",
+      "red",
+      "light-brown"
+    ],
+    "desquamation": [
+      "yes"
+    ],
+    "number": [
+      "several lesions"
+    ]
+  },
+  "melanoma": {
+    "locs": [
+      "body",
+      "head"
+    ],
+    "sex": [
+      "female"
+    ],
+    "age": [
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White"
+    ],
+    "family history": [
+      "yes"
+    ],
+    "prolonged sun exposure": [
+      "yes"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot",
+      "knot"
+    ],
+    "color": [
+      "brown",
+      "black"
+    ],
+    "desquamation": [
+      "yes",
+      "no"
+    ],
+    "number": [
+      "one lesion"
+    ]
+  },
+  "seborrheic_keratosis": {
+    "locs": [
+      "body",
+      "head"
+    ],
+    "sex": [
+      "female"
+    ],
+    "age": [
+      "30-39",
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White",
+      "Type IV-Beige or olive",
+      "Type V-Moderately brown",
+      "Type VI-Dark brown or black"
+    ],
+    "family history": [
+      "yes"
+    ],
+    "prolonged sun exposure": [
+      "yes",
+      "no"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot",
+      "plaque",
+      "papule"
+    ],
+    "color": [
+      "yellow",
+      "light-brown",
+      "brown",
+      "black"
+    ],
+    "desquamation": [
+      "yes"
+    ],
+    "number": [
+      "several lesions"
+    ]
+  },
+  "nevus": {
+    "locs": [
+      "hand or foot",
+      "body",
+      "head"
+    ],
+    "sex": [
+      "male",
+      "female"
+    ],
+    "age": [
+      "<20",
+      "20-29",
+      "30-39",
+      ">=40"
+    ],
+    "skin phototype": [
+      "Type I-Ivory",
+      "Type II-White",
+      "Type III-White",
+      "Type IV-Beige or olive",
+      "Type V-Moderately brown",
+      "Type VI-Dark brown or black"
+    ],
+    "family history": [
+      "yes",
+      "no"
+    ],
+    "prolonged sun exposure": [
+      "yes",
+      "no"
+    ],
+    "injury": [
+      "yes",
+      "no"
+    ],
+    "lesions": [
+      "spot",
+      "plaque",
+      "papule",
+      "knot",
+      "sore"
+    ],
+    "color": [
+      "brown",
+      "black"
+    ],
+    "desquamation": [
+      "yes",
+      "no"
+    ],
+    "number": [
+      "one lesion",
+      "several lesions"
+    ]
+  }
+}

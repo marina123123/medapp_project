@@ -1,0 +1,74 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <div class="row my-3">
+        <form action="{{ url_for('module_surveys.download_pdf', id=id) }}" method="POST">
+            <div class="col-3">
+                <input name="btn_new" type="submit" class="btn btn-primary" value="Print"/>
+            </div>
+        </form>
+    </div>
+
+    <h4 class="my-3"> Results: {{survey_type|replace("_", " ")}} </h4>
+
+
+    <div class="row">
+        <h5 class="col-12"> ID: {{id}} </h5>
+        <h5 class="col-12"> Date: {{date}} </h5>
+        <h5 class="col-12"> Based on image analysis were found suspicious objects: </h5>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            <table class="table table-condensed">
+                <thead class="thead-dark">
+                <tr>
+                    {% for c in colnames %}
+                        <th>{{ c }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for row in values %}
+                        <tr>
+                            {% for v in row %}
+                                <td>{{v}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% for c_p, files in data %}
+        <div class="row my-3">
+            <h5 class="col-3">Contrast: {{c_p[0]}}</h5>
+        </div>
+        <div class="row">
+            <h5 class="col-3">Projection: {{c_p[1]}}</h5>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <select onchange="$('#{{loop.index-1}}').attr('src', this.options[this.selectedIndex].value);">
+                    <option value="{{ url_for('static', filename=selected_path[loop.index-1]) }}" selected>{{selected_name[loop.index-1]}}</option>
+                    {% for fn, fp in files.items() %}
+                        {% if not loop.first %}
+                            <option value="{{ url_for('static', filename=fp) }}">{{fn}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <img id="{{loop.index-1}}" class="img-result" src="{{ url_for('static', filename=selected_path[loop.index-1]) }}">
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

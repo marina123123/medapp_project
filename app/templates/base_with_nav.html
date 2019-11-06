@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if active=='articles' %}active{% endif %}">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_surveys.articles') }}">{{langfields.ARTICLES}}</a>
+                </li>
+                <li class="nav-item {% if active=='radiology' %}active{% endif %}">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_surveys.radiology') }}">{{langfields.RADIOLOGY}}</a>
+                </li>
+                <li class="nav-item {% if active=='dermatology' %}active{% endif %}">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_surveys.dermatology') }}">{{langfields.DERMATOLOGY}}</a>
+                </li>
+                <li class="nav-item {% if active=='histology' %}active{% endif %}">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_surveys.histology') }}">{{langfields.HISTOLOGY}}</a>
+                </li>
+                <li class="nav-item {% if active=='protocols' %}active{% endif %}">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_surveys.protocols') }}">{{langfields.PROTOCOLS}}</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="navbar-text pl-0 pr-4"> USER </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0 pr-4" href="{{ url_for('module_auth.login') }}">{{langfields.LOGOUT}}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block app_content %}
+
+    {% block app_content_next %}
+    {% endblock %}
+
+{% endblock %}

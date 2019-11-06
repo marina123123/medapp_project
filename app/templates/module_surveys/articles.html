@@ -1,0 +1,45 @@
+{% extends "base_with_nav.html" %}
+
+{% block app_content_next %}
+
+    <h2 class="my-3"> {{langfields.ARTICLES_N_PUBLICATIONS}} </h2>
+
+    <form action="{{ url_for('module_surveys.articles') }}" method="POST">
+        <div class="form-group row">
+            <div class="col-6">
+                {% if input_search %}
+                    <input name="input_search" type="input" class="form-control" value={{input_search}} required>
+                {% else %}
+                    <input name="input_search" type="input" class="form-control" placeholder={{langfields.SEARCH_WORD}} required>
+                {% endif %}
+            </div>
+            <div class="col">
+                <input name="btn_search" type="submit" class="btn btn-primary" value={{langfields.SEARCH}}>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-12">
+            {% if wex_image == 'True' %}
+                <img src="{{ url_for('static', filename='img/cloud.png') }}"
+                     class="img-fluid">
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        {% for l in links %}
+            <div class="col-12">
+                <div class="well">
+                    <h3>{{l.title}}</h3>
+                    <a href={{l.link}}>{{l.link}}</a>
+                    <p class="text-justify">{{l.text}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}
